@@ -1,0 +1,5 @@
+sbt run will give an option of running a student producer or a student consumer
+
+student producer will produce a student instance into the topic
+
+student consumer will read a student instance off the topic
