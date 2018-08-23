@@ -3,6 +3,7 @@ package kafkaclient
 object StudentProducer extends App {
  
  import java.util.Properties
+ import Models._
 
  import org.apache.kafka.clients.producer._
 
@@ -13,15 +14,12 @@ object StudentProducer extends App {
 
  val producer = new KafkaProducer[String, String](props)
    
- val TOPIC="test"
+ val TOPIC="test0"
  
  for(i<- 1 to 50){
-  val record = new ProducerRecord(TOPIC, "key", s"hello $i")
+  val record = new ProducerRecord(TOPIC, "key", Student(i,"student " + i.toString).toString)
   producer.send(record)
  }
-    
- val record = new ProducerRecord(TOPIC, "key", "the end "+new java.util.Date)
- producer.send(record)
 
  producer.close()
 }
