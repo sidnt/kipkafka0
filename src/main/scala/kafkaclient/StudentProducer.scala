@@ -15,7 +15,7 @@ object StudentProducer extends App {
 
  val producer = new KafkaProducer[String, Student](props)
    
- val TOPIC="test0"
+ val TOPIC="students0"
  
  
   val record = new ProducerRecord(TOPIC, "key", Student(1,"Ayush"))
