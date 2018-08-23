@@ -1,5 +1,5 @@
 package kafkaclient
 
-object Models extends App {
+object Models {
   case class Student(id:Int, name:String)
 }
